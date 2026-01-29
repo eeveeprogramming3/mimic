@@ -37,8 +37,9 @@ STATE_FILE = Path("./.mimic_state.json")
 STOP_FILE = Path("./.mimic_stop")
 # Config file for Mimic settings
 CONFIG_FILE = Path.home() / ".mimic_config.json"
-# Moltbot config file (to read API key)
+# Moltbot/Clawdbot config files (to read API key)
 MOLTBOT_CONFIG_FILE = Path.home() / ".moltbot" / "config.json"
+CLAWDBOT_CONFIG_FILE = Path.home() / ".clawdbot" / "config.json"
 
 # Common patterns that might indicate sensitive areas (coordinates to blur)
 SENSITIVE_KEYWORDS = ["password", "secret", "token", "key", "credit", "ssn", "bank"]
@@ -66,12 +67,19 @@ DEFAULT_MODEL = "sonnet"
 
 
 def load_moltbot_config():
-    """Load Moltbot's config file to get API key and settings."""
-    if not MOLTBOT_CONFIG_FILE.exists():
+    """Load Moltbot/Clawdbot config file to get API key and settings."""
+    # Try clawdbot first (legacy), then moltbot
+    config_file = None
+    if CLAWDBOT_CONFIG_FILE.exists():
+        config_file = CLAWDBOT_CONFIG_FILE
+    elif MOLTBOT_CONFIG_FILE.exists():
+        config_file = MOLTBOT_CONFIG_FILE
+
+    if not config_file:
         return None
 
     try:
-        config = json.loads(MOLTBOT_CONFIG_FILE.read_text())
+        config = json.loads(config_file.read_text())
         return config
     except (json.JSONDecodeError, IOError):
         return None
@@ -282,26 +290,34 @@ def get_element_at_point(x, y):
 
 
 def get_default_moltbot_path():
-    """Get the default Moltbot skills path based on OS."""
+    """Get the default Clawdbot/Moltbot skills path based on OS."""
     system = platform.system()
 
+    # Default to .clawdbot, fallback to .moltbot if it exists
+    clawdbot_path = Path.home() / ".clawdbot" / "skills"
+    moltbot_path = Path.home() / ".moltbot" / "skills"
+
+    # Check which exists, prefer clawdbot
+    if clawdbot_path.parent.exists():
+        return clawdbot_path
+    if moltbot_path.exists():
+        return moltbot_path
+
     if system == "Windows":
-        # Windows: %APPDATA%\moltbot\skills or %USERPROFILE%\.moltbot\skills
         appdata = os.environ.get("APPDATA")
         if appdata:
-            return Path(appdata) / "moltbot" / "skills"
-        return Path.home() / ".moltbot" / "skills"
+            return Path(appdata) / "clawdbot" / "skills"
+        return clawdbot_path
 
     elif system == "Darwin":
-        # macOS: ~/Library/Application Support/moltbot/skills or ~/.moltbot/skills
-        lib_path = Path.home() / "Library" / "Application Support" / "moltbot" / "skills"
-        if lib_path.parent.parent.exists():
-            return lib_path
-        return Path.home() / ".moltbot" / "skills"
+        clawdbot_lib = Path.home() / "Library" / "Application Support" / "clawdbot" / "skills"
+        if clawdbot_lib.parent.exists():
+            return clawdbot_lib
+        return clawdbot_path
 
     else:
-        # Linux and others: ~/.moltbot/skills
-        return Path.home() / ".moltbot" / "skills"
+        # Linux - default to clawdbot
+        return clawdbot_path
 
 
 def load_config():
