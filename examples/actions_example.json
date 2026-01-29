@@ -1,0 +1,118 @@
+[
+  {
+    "type": "click",
+    "x": 45,
+    "y": 752,
+    "button": "Button.left",
+    "timestamp": 2.34
+  },
+  {
+    "type": "click",
+    "x": 650,
+    "y": 52,
+    "button": "Button.left",
+    "timestamp": 5.67
+  },
+  {
+    "type": "keypress",
+    "key": "g",
+    "timestamp": 6.12
+  },
+  {
+    "type": "keypress",
+    "key": "o",
+    "timestamp": 6.25
+  },
+  {
+    "type": "keypress",
+    "key": "o",
+    "timestamp": 6.38
+  },
+  {
+    "type": "keypress",
+    "key": "g",
+    "timestamp": 6.51
+  },
+  {
+    "type": "keypress",
+    "key": "l",
+    "timestamp": 6.64
+  },
+  {
+    "type": "keypress",
+    "key": "e",
+    "timestamp": 6.77
+  },
+  {
+    "type": "keypress",
+    "key": ".",
+    "timestamp": 6.90
+  },
+  {
+    "type": "keypress",
+    "key": "c",
+    "timestamp": 7.03
+  },
+  {
+    "type": "keypress",
+    "key": "o",
+    "timestamp": 7.16
+  },
+  {
+    "type": "keypress",
+    "key": "m",
+    "timestamp": 7.29
+  },
+  {
+    "type": "keypress",
+    "key": "Key.enter",
+    "timestamp": 7.85
+  },
+  {
+    "type": "click",
+    "x": 520,
+    "y": 320,
+    "button": "Button.left",
+    "timestamp": 10.23
+  },
+  {
+    "type": "keypress",
+    "key": "w",
+    "timestamp": 11.45
+  },
+  {
+    "type": "keypress",
+    "key": "e",
+    "timestamp": 11.58
+  },
+  {
+    "type": "keypress",
+    "key": "a",
+    "timestamp": 11.71
+  },
+  {
+    "type": "keypress",
+    "key": "t",
+    "timestamp": 11.84
+  },
+  {
+    "type": "keypress",
+    "key": "h",
+    "timestamp": 11.97
+  },
+  {
+    "type": "keypress",
+    "key": "e",
+    "timestamp": 12.10
+  },
+  {
+    "type": "keypress",
+    "key": "r",
+    "timestamp": 12.23
+  },
+  {
+    "type": "keypress",
+    "key": "Key.enter",
+    "timestamp": 13.05
+  }
+]

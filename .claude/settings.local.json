@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(source .venv/bin/activate)",
+      "Bash(pip install:*)",
+      "Bash(sudo apt-get install:*)",
+      "Bash(mimic start --help:*)",
+      "Bash(mimic test:*)"
+    ]
+  }
+}
