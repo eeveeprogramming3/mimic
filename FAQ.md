@@ -20,10 +20,10 @@ pip install -r requirements.txt
 **Fix:**
 ```bash
 # Install from GitHub instead
-pip install git+https://github.com/yourusername/mimic.git
+pip install git+https://github.com/eeveeprogramming3/mimic.git
 
 # Or install locally
-git clone https://github.com/yourusername/mimic.git
+git clone https://github.com/eeveeprogramming3/mimic.git
 cd mimic
 pip install -e .
 ```
@@ -187,4 +187,4 @@ mimic compile my-task --cost-estimate
 
 ## Still stuck?
 
-Open an issue: https://github.com/yourusername/mimic/issues
+Open an issue: https://github.com/eeveeprogramming3/mimic/issues

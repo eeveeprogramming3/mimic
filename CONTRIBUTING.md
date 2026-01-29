@@ -21,7 +21,7 @@ Thanks for wanting to contribute!
 
 1. **Fork the repo**
    ```bash
-   git clone https://github.com/yourusername/mimic.git
+   git clone https://github.com/eeveeprogramming3/mimic.git
    ```
 
 2. **Create a branch**

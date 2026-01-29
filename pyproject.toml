@@ -44,9 +44,9 @@ build = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/yourusername/mimic"
-Repository = "https://github.com/yourusername/mimic"
-Issues = "https://github.com/yourusername/mimic/issues"
+Homepage = "https://github.com/eeveeprogramming3/mimic"
+Repository = "https://github.com/eeveeprogramming3/mimic"
+Issues = "https://github.com/eeveeprogramming3/mimic/issues"
 
 [project.scripts]
 mimic = "mimic.main:main"

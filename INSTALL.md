@@ -5,7 +5,7 @@ Step-by-step setup for first-time users.
 ## Step 1: Get the Code
 
 ```bash
-git clone https://github.com/yourusername/mimic.git
+git clone https://github.com/eeveeprogramming3/mimic.git
 cd mimic
 ```
 

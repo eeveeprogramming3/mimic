@@ -157,7 +157,7 @@ We may update this policy as Mimic evolves. Changes will be noted in the CHANGEL
 
 ## Contact
 
-Questions about privacy? Open an issue: https://github.com/yourusername/mimic/issues
+Questions about privacy? Open an issue: https://github.com/eeveeprogramming3/mimic/issues
 
 ---
 
